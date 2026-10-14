@@ -533,3 +533,188 @@ footer {
     transition: none;
   }
 }
+
+/* Phones and tablets: a compact header, then a section menu that stays at
+   the top of the screen while the page scrolls. The profile column dissolves
+   (display: contents) so the menu can stick for the whole page, not only for
+   the height of its own column. */
+
+@media (max-width: 59.99rem) {
+  .shell {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side {
+    display: contents;
+  }
+
+  .mark {
+    order: 1;
+    align-self: flex-start;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 2rem 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    order: 2;
+    font-size: 2.1rem;
+  }
+
+  .role {
+    order: 3;
+    margin-top: 0.3rem;
+  }
+
+  .facts {
+    order: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1rem;
+    margin-top: 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .facts .k {
+    min-width: 0;
+    margin-right: 0.35rem;
+  }
+
+  .social {
+    order: 5;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+
+  nav {
+    order: 6;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 1.25rem -1.25rem 0;
+    padding: 0.5rem 1.25rem;
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* A fade at the right edge says the menu scrolls sideways. */
+  nav::after {
+    content: "";
+    position: sticky;
+    right: -1.25rem;
+    flex: 0 0 2.5rem;
+    margin-left: -2.5rem;
+    background: linear-gradient(to right, transparent, var(--paper));
+    pointer-events: none;
+  }
+
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 1rem;
+    font-size: 0.92rem;
+  }
+
+  nav a:last-of-type {
+    margin-right: 1.5rem;
+  }
+
+  main {
+    order: 7;
+    padding-top: 2rem;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
+  }
+
+  section + section {
+    margin-top: 3.25rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+  }
+
+  .stats {
+    margin-top: 1.5rem;
+    gap: 0.6rem;
+  }
+
+  .stats li {
+    padding: 0.85rem;
+  }
+
+  .stats b {
+    font-size: 1.75rem;
+  }
+
+  .card,
+  .card-link {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .card:has(.card-link) {
+    padding: 0;
+  }
+
+  .timeline {
+    padding-left: 1.4rem;
+    gap: 2.25rem;
+  }
+
+  .timeline::before {
+    left: 0.3rem;
+  }
+
+  .job::before {
+    left: -1.4rem;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  /* Title, company and dates stack, so none of them has to wrap. */
+  .job-head {
+    grid-template-columns: 1fr;
+  }
+
+  .job-head .when {
+    grid-row: 3;
+    grid-column: 1;
+    margin-top: 0.15rem;
+  }
+
+  .job li {
+    font-size: 0.94rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+  }
+}
+
+@media (hover: none) {
+  a,
+  nav a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card:has(.card-link):hover {
+    transform: none;
+  }
+}
