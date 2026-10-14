@@ -40,187 +40,221 @@
   </script>
 </head>
 <body>
-  <main>
-    <header class="intro">
+  <div class="shell">
+    <aside class="side">
       <p class="mark" aria-hidden="true">ay</p>
       <h1>Amr Yadam</h1>
       <p class="role">Senior Software Developer</p>
-      <p class="lead">
-        I build Java and Spring Boot back ends for payments, e-invoicing and port logistics.
-        For nearly seven years I have designed services that move money and documents reliably, integrated them with payment gateways, regulators and partners, and kept them fast as their volume grew.
-      </p>
-      <p class="meta">
-        <span>Riyadh, Saudi Arabia</span>
-        <span aria-hidden="true">/</span>
-        <span>Arabic and English</span>
-      </p>
-    </header>
-
-    <section aria-labelledby="experience">
-      <h2 id="experience">Experience</h2>
-
-      <article class="job">
-        <header>
-          <h3>Senior Software Engineer <span class="at">at Elm</span></h3>
-          <p class="when">Feb 2024 - present</p>
-        </header>
-        <p>
-          I lead back-end development of FasahPay, an invoicing and payment platform, and build the back end of Tamween, a ship provisioning platform for the General Ports Authority.
-        </p>
-
-        <h4>FasahPay</h4>
-        <ul>
-          <li>Co-led the design and build of the first B2B e-wallet in Saudi Arabia, and its integration into FasahPay.</li>
-          <li>Built the ZATCA Fatoora integration: generating, cryptographically signing and submitting UBL 2.1 e-invoices with QR codes, to meet the Phase 2 rules.</li>
-          <li>Integrated four payment gateways (Esal SADAD, IFS SADAD, Payfort and PayTabs) for card and SADAD payments.</li>
-          <li>Connected paid invoices to a VAT billing platform through a transactional outbox, with lock-free row claiming, a single-instance poller and a reconciler for stuck rows.</li>
-          <li>Built the back-office Operation Portal: invoice and biller search, invoice PDFs, webhook re-push and manual settlement, all role-restricted and audit-logged.</li>
-          <li>Built biller transaction reports with a streaming Excel export that keeps memory flat however large the report is.</li>
-          <li>Moved e-mail from SMTP to a central notification service, with audited delivery and an idempotent replay tool to recover messages lost in an outage.</li>
-          <li>Made architecture decisions that kept the platform fast and durable while invoice volume grew every year.</li>
-        </ul>
-
-        <h4>Tamween</h4>
-        <ul>
-          <li>Built the service-request module: the request lifecycle with price approval, bilingual PDF permits with QR codes, and status notifications.</li>
-          <li>Designed a partner inquiry API with API-key authentication, per-key rate limiting, audit logs and signed, expiring download links.</li>
-          <li>Hardened the platform for release: bot protection, an OTP race-condition fix, unified access control on attachments, security headers and N+1 query removal.</li>
-          <li>Integrated the back end with the Ports Community System and the Port Management System, covering fueling, food provisioning, maintenance, and paint and greasing.</li>
-        </ul>
-
-        <h4>Platform</h4>
-        <ul>
-          <li>Migrated four services onto Kubernetes with Helm-based GitOps, with environment-driven configuration from development to production.</li>
-          <li>Upgraded services from Java 8 and Spring Boot 2 to Java 21 and Spring Boot 3.5, and a legacy API to Spring Boot 4.1, proving identical behaviour with a 66-case record-and-compare test harness.</li>
-        </ul>
-      </article>
-
-      <article class="job">
-        <header>
-          <h3>Software Engineer <span class="at">at Data Gear</span></h3>
-          <p class="when">Dec 2022 - Jan 2024</p>
-        </header>
-        <p>Back-end development of an Enterprise Case Management platform, integrated with the FTI, AML and sanctions teams.</p>
-        <ul>
-          <li>Designed inter-team messaging APIs on ActiveMQ with JAAS authentication and authorization.</li>
-          <li>Designed BPMN workflows that automated business processes and cut manual steps.</li>
-          <li>Built a database abstraction layer that runs on several database engines.</li>
-          <li>Migrated the workflow engine from Activiti to Flowable, and upgraded the platform from Spring Boot 2.7 and Java 8 to Spring Boot 3.1 and Java 21.</li>
-        </ul>
-      </article>
-
-      <article class="job">
-        <header>
-          <h3>Software Engineer <span class="at">at InfoSys Tech</span></h3>
-          <p class="when">Nov 2019 - Nov 2022</p>
-        </header>
-        <p>Back ends for logistics and freight forwarding products serving clients in Saudi Arabia.</p>
-        <ul>
-          <li>Integrated the FIATA electronic Bill of Lading (eFBL) APIs, enabling digital freight documents.</li>
-          <li>Designed and built a trucking module for domestic shipping.</li>
-          <li>Built a management dashboard that combines data from several back-end sources in real time.</li>
-          <li>Designed an idempotency layer for existing APIs that stops duplicate transactions.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-      <dl class="stack">
-        <div>
-          <dt>Languages</dt>
-          <dd>Java, SQL, PL/SQL, T-SQL, TypeScript, JavaScript</dd>
-        </div>
-        <div>
-          <dt>Back end</dt>
-          <dd>Spring Boot, Spring Security, Spring Authorization Server, JPA and Hibernate, Flowable</dd>
-        </div>
-        <div>
-          <dt>Data</dt>
-          <dd>Oracle, PostgreSQL, SQL Server, Redis, Liquibase</dd>
-        </div>
-        <div>
-          <dt>Messaging</dt>
-          <dd>RabbitMQ, ActiveMQ</dd>
-        </div>
-        <div>
-          <dt>Delivery</dt>
-          <dd>Docker, Kubernetes, Helm, OpenShift, Jenkins</dd>
-        </div>
-        <div>
-          <dt>Testing</dt>
-          <dd>JUnit, Testcontainers, WireMock, Vitest</dd>
-        </div>
-        <div>
-          <dt>Front end</dt>
-          <dd>Angular, PrimeNG, Angular Material, NgRx</dd>
-        </div>
-        <div>
-          <dt>Practice</dt>
-          <dd>Payments, e-invoicing, multi-tenancy, OAuth2 and OpenID Connect, REST and OpenAPI, BPMN, system integration</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section aria-labelledby="work">
-      <h2 id="work">Open source</h2>
-      <ul class="projects">
-        <li>
-          <a href="https://github.com/amryadam/skills">
-            <span class="name">skills</span>
-            <span class="lang">Python</span>
-          </a>
-          <p>Claude Code skills for backend engineering work, such as end-to-end tests of a backend change against a real running service. Installable into any agent.</p>
-        </li>
-        <li>
-          <a href="https://github.com/amryadam/design-canvas">
-            <span class="name">design-canvas</span>
-            <span class="lang">JavaScript</span>
-          </a>
-          <p>A pan and zoom canvas for design projects. The screens near the middle of the view run live; the rest wait as snapshots.</p>
-        </li>
-        <li>
-          <a href="https://github.com/amryadam/zsh-claude-completion">
-            <span class="name">zsh-claude-completion</span>
-            <span class="lang">Shell</span>
-          </a>
-          <p>Tab completion for the Claude Code command line in Zsh.</p>
-        </li>
-        <li>
-          <a href="https://amryadam.github.io/quran-cairo/">
-            <span class="name">quran-cairo</span>
-            <span class="lang">HTML</span>
-          </a>
-          <p lang="ar" dir="rtl">بث مباشر لإذاعة القرآن الكريم من القاهرة</p>
-        </li>
+      <ul class="facts">
+        <li><span class="k">Based in</span> Riyadh, Saudi Arabia</li>
+        <li><span class="k">Now at</span> Elm</li>
+        <li><span class="k">Speaks</span> Arabic, English</li>
       </ul>
-    </section>
-
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <article class="job">
-        <header>
-          <h3>Bachelor of Engineering <span class="at">at Alexandria University</span></h3>
-          <p class="when">2014 - 2019</p>
-        </header>
-        <p>
-          Communications and Electronics.
-          Graduation project: <a href="https://github.com/amryadam/ECG_classification">detecting myocardial infarction in ECG signals with multiple-instance learning</a>.
-        </p>
-      </article>
-    </section>
-
-    <section aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <ul class="links">
+      <nav aria-label="Sections">
+        <a href="#highlights">Highlights</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </nav>
+      <ul class="social">
         <li><a href="https://github.com/amryadam" rel="me">GitHub</a></li>
         <li><a href="https://x.com/amryadam99" rel="me">X</a></li>
       </ul>
-    </section>
-  </main>
+    </aside>
 
-  <footer>
-    <p>amryadam.com</p>
-  </footer>
+    <main>
+      <section class="about" aria-label="About">
+        <p class="lead">
+          I build <strong>Java and Spring Boot back ends</strong> for payments, e&#8209;invoicing and port logistics: services that move money and documents reliably, and stay fast as they grow.
+        </p>
+        <ul class="stats">
+          <li><b>6+</b><span>years building back ends</span></li>
+          <li><b>3</b><span>companies since 2019</span></li>
+          <li><b>4</b><span>payment gateways integrated</span></li>
+          <li><b>2</b><span>platforms I build at Elm</span></li>
+        </ul>
+      </section>
+
+      <section id="highlights" aria-labelledby="highlights-h">
+        <h2 id="highlights-h">Highlights</h2>
+        <ul class="cards">
+          <li class="card">
+            <p class="tag">Payments</p>
+            <h3>First B2B e-wallet in Saudi Arabia</h3>
+            <p>Co-led its design and build, and its integration into FasahPay.</p>
+          </li>
+          <li class="card">
+            <p class="tag">E-invoicing</p>
+            <h3>ZATCA Phase 2 compliance</h3>
+            <p>Signed UBL 2.1 e-invoices with QR codes, generated and submitted automatically.</p>
+          </li>
+          <li class="card">
+            <p class="tag">Integration</p>
+            <h3>Partner API for port services</h3>
+            <p>API keys, per-key rate limits, audit logs and signed, expiring links.</p>
+          </li>
+          <li class="card">
+            <p class="tag">Modernisation</p>
+            <h3>Java 8 to Java 21, safely</h3>
+            <p>Spring Boot 2 to 4.1, with behaviour proved identical by a 66-case harness.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-h">
+        <h2 id="experience-h">Experience</h2>
+        <ol class="timeline">
+          <li class="job">
+            <div class="job-head">
+              <h3>Senior Software Engineer</h3>
+              <p class="org">Elm</p>
+              <p class="when">Feb 2024 - present</p>
+            </div>
+            <p class="ctx">Back-end lead for FasahPay, an invoicing and payment platform, and back end of Tamween, a ship provisioning platform for the General Ports Authority.</p>
+
+            <div class="product">
+              <p class="tag">FasahPay</p>
+              <ul>
+                <li><strong>B2B e-wallet</strong> - co-led design and build of the first one in Saudi Arabia.</li>
+                <li><strong>ZATCA Fatoora</strong> - generation, signing and submission of Phase 2 e-invoices.</li>
+                <li><strong>Payment gateways</strong> - Esal SADAD, IFS SADAD, Payfort and PayTabs.</li>
+                <li><strong>VAT billing</strong> - transactional outbox with lock-free claiming and a reconciler.</li>
+                <li><strong>Operation Portal</strong> - search, PDFs, webhook re-push and settlement, all audited.</li>
+                <li><strong>Reports</strong> - streaming Excel export with flat memory at any size.</li>
+                <li><strong>E-mail recovery</strong> - idempotent replay of messages lost in an outage.</li>
+              </ul>
+            </div>
+
+            <div class="product">
+              <p class="tag">Tamween</p>
+              <ul>
+                <li><strong>Service requests</strong> - lifecycle with price approval and bilingual PDF permits.</li>
+                <li><strong>Partner API</strong> - API keys, rate limits and signed download links.</li>
+                <li><strong>Security</strong> - bot protection, OTP race fix, access control, security headers.</li>
+                <li><strong>Port systems</strong> - integrated with the Ports Community and Port Management systems.</li>
+              </ul>
+            </div>
+
+            <div class="product">
+              <p class="tag">Platform</p>
+              <ul>
+                <li><strong>Kubernetes</strong> - moved four services onto Helm-based GitOps.</li>
+                <li><strong>Upgrades</strong> - Java 8 to 21, Spring Boot 2 to 3.5 and 4.1.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <div class="job-head">
+              <h3>Software Engineer</h3>
+              <p class="org">Data Gear</p>
+              <p class="when">Dec 2022 - Jan 2024</p>
+            </div>
+            <p class="ctx">Enterprise Case Management platform, integrated with the FTI, AML and sanctions teams.</p>
+            <ul>
+              <li><strong>Messaging APIs</strong> - ActiveMQ with JAAS authentication.</li>
+              <li><strong>Workflows</strong> - BPMN processes that cut manual steps.</li>
+              <li><strong>Data layer</strong> - one abstraction over several database engines.</li>
+              <li><strong>Migrations</strong> - Activiti to Flowable, Java 8 to 21, Spring Boot 2.7 to 3.1.</li>
+            </ul>
+          </li>
+
+          <li class="job">
+            <div class="job-head">
+              <h3>Software Engineer</h3>
+              <p class="org">InfoSys Tech</p>
+              <p class="when">Nov 2019 - Nov 2022</p>
+            </div>
+            <p class="ctx">Logistics and freight forwarding products for clients in Saudi Arabia.</p>
+            <ul>
+              <li><strong>FIATA eFBL</strong> - digital bills of lading through the FIATA APIs.</li>
+              <li><strong>Trucking</strong> - a module for domestic shipping.</li>
+              <li><strong>Dashboard</strong> - real-time view across several back ends.</li>
+              <li><strong>Idempotency</strong> - stopped duplicate transactions on existing APIs.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-h">
+        <h2 id="skills-h">Skills</h2>
+        <div class="skills">
+          <div class="group">
+            <h3>Languages</h3>
+            <ul class="chips"><li>Java</li><li>SQL</li><li>PL/SQL</li><li>T-SQL</li><li>TypeScript</li><li>JavaScript</li></ul>
+          </div>
+          <div class="group">
+            <h3>Back end</h3>
+            <ul class="chips"><li>Spring Boot</li><li>Spring Security</li><li>Spring Authorization Server</li><li>JPA / Hibernate</li><li>Flowable</li></ul>
+          </div>
+          <div class="group">
+            <h3>Data and messaging</h3>
+            <ul class="chips"><li>Oracle</li><li>PostgreSQL</li><li>SQL Server</li><li>Redis</li><li>Liquibase</li><li>RabbitMQ</li><li>ActiveMQ</li></ul>
+          </div>
+          <div class="group">
+            <h3>Delivery and testing</h3>
+            <ul class="chips"><li>Docker</li><li>Kubernetes</li><li>Helm</li><li>OpenShift</li><li>Jenkins</li><li>JUnit</li><li>Testcontainers</li><li>WireMock</li></ul>
+          </div>
+          <div class="group">
+            <h3>Front end</h3>
+            <ul class="chips"><li>Angular</li><li>PrimeNG</li><li>Angular Material</li><li>NgRx</li><li>Vitest</li></ul>
+          </div>
+          <div class="group">
+            <h3>Domains</h3>
+            <ul class="chips"><li>Payments</li><li>E-invoicing</li><li>Multi-tenancy</li><li>OAuth2 / OIDC</li><li>REST / OpenAPI</li><li>BPMN</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-h">
+        <h2 id="projects-h">Open source</h2>
+        <ul class="cards">
+          <li class="card">
+            <a class="card-link" href="https://github.com/amryadam/skills">
+              <p class="tag">Python</p>
+              <h3>skills</h3>
+              <p>Claude Code skills for backend work, like end-to-end tests of a change against a running service.</p>
+            </a>
+          </li>
+          <li class="card">
+            <a class="card-link" href="https://github.com/amryadam/design-canvas">
+              <p class="tag">JavaScript</p>
+              <h3>design-canvas</h3>
+              <p>A pan and zoom canvas for design projects, with live screens near the centre.</p>
+            </a>
+          </li>
+          <li class="card">
+            <a class="card-link" href="https://github.com/amryadam/zsh-claude-completion">
+              <p class="tag">Shell</p>
+              <h3>zsh-claude-completion</h3>
+              <p>Tab completion for the Claude Code command line in Zsh.</p>
+            </a>
+          </li>
+          <li class="card">
+            <a class="card-link" href="https://amryadam.github.io/quran-cairo/">
+              <p class="tag">HTML</p>
+              <h3>quran-cairo</h3>
+              <p lang="ar" dir="rtl">بث مباشر لإذاعة القرآن الكريم من القاهرة</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="education" aria-labelledby="education-h">
+        <h2 id="education-h">Education</h2>
+        <div class="card edu">
+          <p class="tag">2014 - 2019</p>
+          <h3>Bachelor of Engineering, Communications and Electronics</h3>
+          <p class="org">Alexandria University</p>
+          <p>Graduation project: <a href="https://github.com/amryadam/ECG_classification">detecting myocardial infarction in ECG signals</a> with multiple-instance learning.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>amryadam.com</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
