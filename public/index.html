@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amr Yadam - Senior Software Developer</title>
-  <meta name="description" content="Amr Yadam, senior software developer. Multi-tenant backends in Java and Spring Boot, Angular frontends, and the infrastructure that runs them.">
+  <meta name="description" content="Amr Yadam, senior software developer in Riyadh. Java and Spring Boot back ends for payments, e-invoicing and port logistics.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://amryadam.com/">
   <meta property="og:title" content="Amr Yadam - Senior Software Developer">
-  <meta property="og:description" content="Multi-tenant backends in Java and Spring Boot, Angular frontends, and the infrastructure that runs them.">
+  <meta property="og:description" content="Java and Spring Boot back ends for payments, e-invoicing and port logistics.">
   <meta property="profile:first_name" content="Amr">
   <meta property="profile:last_name" content="Yadam">
   <meta name="twitter:card" content="summary">
@@ -27,10 +27,13 @@
     "mainEntity": {
       "@type": "Person",
       "name": "Amr Yadam",
-      "jobTitle": "Senior Software Developer",
+      "jobTitle": "Senior Software Engineer",
+      "worksFor": { "@type": "Organization", "name": "Elm" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Alexandria University" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA" },
+      "knowsLanguage": ["ar", "en"],
+      "knowsAbout": ["Java", "Spring Boot", "Payments", "E-invoicing", "Multi-tenancy", "Oracle", "PostgreSQL", "RabbitMQ", "Kubernetes", "Angular"],
       "url": "https://amryadam.com/",
-      "address": { "@type": "PostalAddress", "addressCountry": "EG" },
-      "knowsAbout": ["Java", "Spring Boot", "Multi-tenant SaaS", "PostgreSQL", "Angular", "TypeScript", "Docker", "Ansible"],
       "sameAs": ["https://github.com/amryadam", "https://x.com/amryadam99"]
     }
   }
@@ -43,57 +46,118 @@
       <h1>Amr Yadam</h1>
       <p class="role">Senior Software Developer</p>
       <p class="lead">
-        I design and build multi-tenant software end to end: modular backends in Java and Spring Boot, Angular frontends in two languages and both reading directions, and the infrastructure they run on.
+        I build Java and Spring Boot back ends for payments, e-invoicing and port logistics.
+        For nearly seven years I have designed services that move money and documents reliably, integrated them with payment gateways, regulators and partners, and kept them fast as their volume grew.
       </p>
       <p class="meta">
-        <span>Egypt</span>
+        <span>Riyadh, Saudi Arabia</span>
+        <span aria-hidden="true">/</span>
+        <span>Arabic and English</span>
       </p>
     </header>
 
-    <section aria-labelledby="focus">
-      <h2 id="focus">What I do</h2>
-      <ul class="focus">
-        <li>
-          <h3>Backend architecture</h3>
-          <p>Modular monoliths with enforced module boundaries, a database per tenant, versioned schema migrations, and APIs with a stable error contract.</p>
-        </li>
-        <li>
-          <h3>Frontend</h3>
-          <p>Angular applications built on signals and standalone components, with design tokens, light and dark themes, and full right-to-left support for Arabic.</p>
-        </li>
-        <li>
-          <h3>Delivery</h3>
-          <p>Containers, repeatable server setup with Ansible, and documentation that stays true to the code. I treat the reference docs as part of the change, not as an afterthought.</p>
-        </li>
-        <li>
-          <h3>Engineering with AI agents</h3>
-          <p>Workflows where coding agents plan, build and review under clear rules. I publish the skills I use so other teams can use them too.</p>
-        </li>
-      </ul>
+    <section aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+
+      <article class="job">
+        <header>
+          <h3>Senior Software Engineer <span class="at">at Elm</span></h3>
+          <p class="when">Feb 2024 - present</p>
+        </header>
+        <p>
+          I lead back-end development of FasahPay, an invoicing and payment platform, and build the back end of Tamween, a ship provisioning platform for the General Ports Authority.
+        </p>
+
+        <h4>FasahPay</h4>
+        <ul>
+          <li>Co-led the design and build of the first B2B e-wallet in Saudi Arabia, and its integration into FasahPay.</li>
+          <li>Built the ZATCA Fatoora integration: generating, cryptographically signing and submitting UBL 2.1 e-invoices with QR codes, to meet the Phase 2 rules.</li>
+          <li>Integrated four payment gateways (Esal SADAD, IFS SADAD, Payfort and PayTabs) for card and SADAD payments.</li>
+          <li>Connected paid invoices to a VAT billing platform through a transactional outbox, with lock-free row claiming, a single-instance poller and a reconciler for stuck rows.</li>
+          <li>Built the back-office Operation Portal: invoice and biller search, invoice PDFs, webhook re-push and manual settlement, all role-restricted and audit-logged.</li>
+          <li>Built biller transaction reports with a streaming Excel export that keeps memory flat however large the report is.</li>
+          <li>Moved e-mail from SMTP to a central notification service, with audited delivery and an idempotent replay tool to recover messages lost in an outage.</li>
+          <li>Made architecture decisions that kept the platform fast and durable while invoice volume grew every year.</li>
+        </ul>
+
+        <h4>Tamween</h4>
+        <ul>
+          <li>Built the service-request module: the request lifecycle with price approval, bilingual PDF permits with QR codes, and status notifications.</li>
+          <li>Designed a partner inquiry API with API-key authentication, per-key rate limiting, audit logs and signed, expiring download links.</li>
+          <li>Hardened the platform for release: bot protection, an OTP race-condition fix, unified access control on attachments, security headers and N+1 query removal.</li>
+          <li>Integrated the back end with the Ports Community System and the Port Management System, covering fueling, food provisioning, maintenance, and paint and greasing.</li>
+        </ul>
+
+        <h4>Platform</h4>
+        <ul>
+          <li>Migrated four services onto Kubernetes with Helm-based GitOps, with environment-driven configuration from development to production.</li>
+          <li>Upgraded services from Java 8 and Spring Boot 2 to Java 21 and Spring Boot 3.5, and a legacy API to Spring Boot 4.1, proving identical behaviour with a 66-case record-and-compare test harness.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <header>
+          <h3>Software Engineer <span class="at">at Data Gear</span></h3>
+          <p class="when">Dec 2022 - Jan 2024</p>
+        </header>
+        <p>Back-end development of an Enterprise Case Management platform, integrated with the FTI, AML and sanctions teams.</p>
+        <ul>
+          <li>Designed inter-team messaging APIs on ActiveMQ with JAAS authentication and authorization.</li>
+          <li>Designed BPMN workflows that automated business processes and cut manual steps.</li>
+          <li>Built a database abstraction layer that runs on several database engines.</li>
+          <li>Migrated the workflow engine from Activiti to Flowable, and upgraded the platform from Spring Boot 2.7 and Java 8 to Spring Boot 3.1 and Java 21.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <header>
+          <h3>Software Engineer <span class="at">at InfoSys Tech</span></h3>
+          <p class="when">Nov 2019 - Nov 2022</p>
+        </header>
+        <p>Back ends for logistics and freight forwarding products serving clients in Saudi Arabia.</p>
+        <ul>
+          <li>Integrated the FIATA electronic Bill of Lading (eFBL) APIs, enabling digital freight documents.</li>
+          <li>Designed and built a trucking module for domestic shipping.</li>
+          <li>Built a management dashboard that combines data from several back-end sources in real time.</li>
+          <li>Designed an idempotency layer for existing APIs that stops duplicate transactions.</li>
+        </ul>
+      </article>
     </section>
 
-    <section aria-labelledby="stack">
-      <h2 id="stack">Stack</h2>
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
       <dl class="stack">
         <div>
-          <dt>Backend</dt>
-          <dd>Java, Spring Boot, Spring Modulith, Spring Security, Hibernate</dd>
+          <dt>Languages</dt>
+          <dd>Java, SQL, PL/SQL, T-SQL, TypeScript, JavaScript</dd>
+        </div>
+        <div>
+          <dt>Back end</dt>
+          <dd>Spring Boot, Spring Security, Spring Authorization Server, JPA and Hibernate, Flowable</dd>
         </div>
         <div>
           <dt>Data</dt>
-          <dd>PostgreSQL, Liquibase, Valkey and Redis</dd>
+          <dd>Oracle, PostgreSQL, SQL Server, Redis, Liquibase</dd>
         </div>
         <div>
-          <dt>Frontend</dt>
-          <dd>Angular, TypeScript, Tailwind CSS, ng-zorro</dd>
+          <dt>Messaging</dt>
+          <dd>RabbitMQ, ActiveMQ</dd>
         </div>
         <div>
-          <dt>Infrastructure</dt>
-          <dd>Docker, Ansible, Nginx, Cloudflare, GitHub Actions</dd>
+          <dt>Delivery</dt>
+          <dd>Docker, Kubernetes, Helm, OpenShift, Jenkins</dd>
         </div>
         <div>
           <dt>Testing</dt>
-          <dd>JUnit, Testcontainers, Vitest</dd>
+          <dd>JUnit, Testcontainers, WireMock, Vitest</dd>
+        </div>
+        <div>
+          <dt>Front end</dt>
+          <dd>Angular, PrimeNG, Angular Material, NgRx</dd>
+        </div>
+        <div>
+          <dt>Practice</dt>
+          <dd>Payments, e-invoicing, multi-tenancy, OAuth2 and OpenID Connect, REST and OpenAPI, BPMN, system integration</dd>
         </div>
       </dl>
     </section>
@@ -130,6 +194,20 @@
           <p lang="ar" dir="rtl">بث مباشر لإذاعة القرآن الكريم من القاهرة</p>
         </li>
       </ul>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <article class="job">
+        <header>
+          <h3>Bachelor of Engineering <span class="at">at Alexandria University</span></h3>
+          <p class="when">2014 - 2019</p>
+        </header>
+        <p>
+          Communications and Electronics.
+          Graduation project: <a href="https://github.com/amryadam/ECG_classification">detecting myocardial infarction in ECG signals with multiple-instance learning</a>.
+        </p>
+      </article>
     </section>
 
     <section aria-labelledby="contact">
